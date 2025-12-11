@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어신 크리에이터 동출 프로그램 - The Companions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #005f99 0%, #0088cc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        /* Floating Icons Animation */
+        .floating-icon {
+            position: absolute;
+            opacity: 0.15;
+            animation: float 6s ease-in-out infinite;
+            color: white;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        /* Step Connector Line */
+        .step-connector {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #e5e7eb;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .step-connector {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 100%;
+                height: 2px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800 min-h-screen flex flex-col">
+
+    <header class="gradient-bg text-white py-20 px-4 text-center shrink-0">
+        <i class="fas fa-fish floating-icon text-6xl" style="top: 15%; left: 10%; animation-delay: 0s;"></i>
+        <i class="fas fa-users floating-icon text-5xl" style="top: 20%; right: 15%; animation-delay: 1s;"></i>
+        <i class="fas fa-anchor floating-icon text-4xl" style="bottom: 15%; left: 20%; animation-delay: 2s;"></i>
+        <i class="fas fa-handshake floating-icon text-5xl" style="bottom: 20%; right: 10%; animation-delay: 1.5s;"></i>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm border border-white/30">
+                <i class="fas fa-fish mr-2 text-blue-200"></i>어신 크리에이터 동출 프로그램
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight">
+                <span class="inline-block transform hover:scale-105 transition-transform duration-300">The Companions</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light opacity-90 mb-2 flex justify-center items-center gap-2">
+                팬과 함께하는 새로운 수익 모델
+            </p>
+        </div>
+    </header>
+
+    <section class="max-w-4xl mx-auto -mt-10 px-4 relative z-10 mb-16">
+        <div class="bg-white rounded-2xl p-10 card-shadow text-center">
+            <h2 class="text-2xl font-bold mb-6 text-blue-900">1. 동출 프로그램 “The Companions” 란?</h2>
+            <p class="text-lg text-gray-600 leading-relaxed break-keep mb-6">
+                팬들과 함께 낚시를 즐기며 경험을 나누고, 크리에이터만의 매력을 가장 자연스럽게 보여줄 수 있는<br>
+                <span class="text-blue-600 font-bold block mt-2 text-xl"><i class="fas fa-quote-left text-blue-300 text-sm align-top mr-1"></i>체험 기반 프로그램입니다.<i class="fas fa-quote-right text-blue-300 text-sm align-top ml-1"></i></span>
+            </p>
+            <p class="text-gray-600 leading-relaxed break-keep">
+                어신은 이러한 동출 프로그램을 보다 새롭고 안정적으로 운영할 수 있도록 <span class="bg-blue-100 px-2 py-0.5 rounded text-blue-800 font-semibold">청약 기반 모집 시스템</span>을 제공하며,
+                크리에이터가 직접 기획한 동출 프로그램을 부담 없이 실행할 수 있는 환경을 지원합니다.
+            </p>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 mb-20">
+        <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">2. 참여 가치 제안</h2>
+        <p class="text-center text-gray-500 mb-12">"왜 동출 프로그램인가?"</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-blue-500 hover:-translate-y-2 transition-transform duration-300 group">
+                <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-blue-600 text-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">체험형 교류</h3>
+                <p class="text-gray-500 text-sm break-keep">단순 시청을 넘어 팬과 더 깊이 소통할 수 있는 기회입니다.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-green-500 hover:-translate-y-2 transition-transform duration-300 group">
+                <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6 text-green-600 text-2xl group-hover:bg-green-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">부수입 창출</h3>
+                <p class="text-gray-500 text-sm break-keep">참가비를 통해 안정적인 부수입 구조 형성이 가능합니다.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 hover:-translate-y-2 transition-transform duration-300 group">
+                <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-6 text-purple-600 text-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-clapperboard"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">콘텐츠 확장</h3>
+                <p class="text-gray-500 text-sm break-keep">체험 프로그램 현장이 곧 새로운 콘텐츠 소재가 됩니다.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-orange-500 hover:-translate-y-2 transition-transform duration-300 group">
+                <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-6 text-orange-600 text-2xl group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-compass-drafting"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">자유로운 기획</h3>
+                <p class="text-gray-500 text-sm break-keep">장르 제한 없이 자유롭게 기획하고 운영하세요.</p>
+            </div>
+        </div>
+        <div class="mt-8 text-center bg-blue-50 py-4 rounded-lg">
+            <p class="text-blue-800 font-medium"><i class="fas fa-check-circle mr-2"></i>“운영은 어신이 맡고, 크리에이터님은 퍼포먼스에 집중하세요.”</p>
+        </div>
+    </section>
+
+    <section class="bg-white py-16 mb-16 border-y border-gray-100">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">3. 가격 및 장르별 운영 방식</h2>
+            <p class="text-center text-gray-500 mb-12 max-w-2xl mx-auto break-keep">
+                가격 결정의 주도권은 <strong>크리에이터</strong>에게 있으며 장르, 난이도, 이동비, 촬영 여부 등을 고려해<br>
+                자유롭게 책정할 수 있습니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+                    <div class="bg-gray-800 text-white p-5 text-center">
+                        <h3 class="text-xl font-bold"><i class="fas fa-shoe-prints mr-2"></i>비선상 동출</h3>
+                        <span class="text-sm opacity-80">도보 / 방파제 / 갯바위 / 민물</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-6 pb-4 border-b border-gray-200">
+                            <span class="text-gray-600 font-medium">장소 사용비</span>
+                            <span class="text-gray-900 font-bold">없음 (0원)</span>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                            <p class="text-center text-gray-500 text-xs mb-3 font-bold">참가비 구성</p>
+                            <div class="flex flex-wrap justify-center items-center gap-2 text-sm md:text-base font-bold">
+                                <span class="bg-blue-100 text-blue-700 px-3 py-2 rounded-lg border border-blue-200">크리에이터 수익</span>
+                                <span class="text-gray-400"><i class="fas fa-plus"></i></span>
+                                <span class="bg-gray-100 text-gray-600 px-3 py-2 rounded-lg border border-gray-200">어신 수수료 (15%)</span>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-xs text-gray-500 text-center">
+                            * 추후 데이터 기반 최소 마진 기준 설정 검토
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 rounded-2xl overflow-hidden border border-blue-100 hover:shadow-lg transition-shadow">
+                    <div class="bg-blue-600 text-white p-5 text-center">
+                        <h3 class="text-xl font-bold"><i class="fas fa-ship mr-2"></i>선상 동출</h3>
+                        <span class="text-sm opacity-80">배낚시 / 선상 체험</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-6 pb-4 border-b border-blue-100">
+                            <span class="text-gray-600 font-medium">승선비</span>
+                            <span class="text-blue-800 font-bold">크리에이터 직접 협의</span>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-blue-100 shadow-sm">
+                            <p class="text-center text-gray-500 text-xs mb-3 font-bold">참가비 구성</p>
+                            <div class="flex flex-wrap justify-center items-center gap-2 text-sm md:text-base font-bold">
+                                <span class="bg-gray-200 text-gray-700 px-3 py-2 rounded-lg border border-gray-300">승선비</span>
+                                <span class="text-gray-400"><i class="fas fa-plus"></i></span>
+                                <span class="bg-blue-100 text-blue-700 px-3 py-2 rounded-lg border border-blue-200">크리에이터 수익</span>
+                                <span class="text-gray-400"><i class="fas fa-plus"></i></span>
+                                <span class="bg-gray-100 text-gray-600 px-3 py-2 rounded-lg border border-gray-200">어신 수수료 (15%)</span>
+                            </div>
+                        </div>
+                        <ul class="mt-4 text-xs text-gray-500 text-center space-y-1">
+                            <li>* 크리에이터가 직접 원하는 선사를 선정하고 승선비를 딜</li>
+                            <li>* 어신은 이벤트 종료 후 선사 비용을 사후 정산하는 방식으로 운영</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 mb-20">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">4. 구성 아이디어 예시</h2>
+        
+        <div class="mb-12">
+            <h3 class="text-xl font-bold mb-6 text-gray-700 flex items-center">
+                <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                운영 인원 구성 예시
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex items-start">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex-shrink-0 flex items-center justify-center text-gray-600 text-xl mr-4">
+                        <i class="fas fa-person-walking-luggage"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">비선상 동출</h4>
+                        <p class="text-gray-600 text-sm mb-1">장소 특성·혼잡도 등을 고려해 자연스럽게 운영 가능한 규모 설정</p>
+                        <p class="text-gray-500 text-sm">3–8명 등 소규모 운영 추천</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex items-start">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex-shrink-0 flex items-center justify-center text-blue-600 text-xl mr-4">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">선상 동출</h4>
+                        <p class="text-gray-600 text-sm mb-1">선사 정원 기준으로 최대 인원을 설정</p>
+                        <p class="text-gray-500 text-sm">최소 인원은 크리에이터가 운영 편의성과 수익성을 고려해 설정</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-xl font-bold mb-6 text-gray-700 flex items-center">
+                <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                프로그램 구성 유형 예시
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-user-group text-3xl text-blue-500 mb-4"></i>
+                    <h4 class="font-bold mb-2">동행형 (기본)</h4>
+                    <p class="text-xs text-gray-500 break-keep">팬과 함께 낚시하며 소통 중심<br>크리에이터 본연의 매력 전달</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-chalkboard-user text-3xl text-green-500 mb-4"></i>
+                    <h4 class="font-bold mb-2">레슨·교육형</h4>
+                    <p class="text-xs text-gray-500 break-keep">테크닉·포인트·장비 노하우 전수<br>전문성 기반 운영</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-camera text-3xl text-purple-500 mb-4"></i>
+                    <h4 class="font-bold mb-2">촬영본 제공형</h4>
+                    <p class="text-xs text-gray-500 break-keep">팬에게 ‘기억에 남는 콘텐츠’ 제공<br>영상·사진 콘텐츠 활용 가능</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-gift text-3xl text-orange-500 mb-4"></i>
+                    <h4 class="font-bold mb-2">굿즈·패키지형</h4>
+                    <p class="text-xs text-gray-500 break-keep">협찬사·굿즈 등 결합 확장형<br>부가가치 및 만족도 상승</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 mt-6 text-sm">
+                ※ 위 구성은 ‘참고용 예시’이며, 크리에이터님의 스타일에 맞춰 자유롭게 변형하실 수 있습니다.
+            </p>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 mb-20">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">5. 운영 방식 안내</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            <div class="hidden md:block absolute top-12 left-0 w-full h-1 bg-gray-200 -z-10 transform -translate-y-1/2"></div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center relative z-10 group">
+                <div class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ring-8 ring-white group-hover:bg-blue-600 transition-colors">1</div>
+                <h3 class="text-lg font-bold mb-2">프로그램 기획</h3>
+                <ul class="text-sm text-gray-600 text-left list-disc list-inside space-y-1">
+                    <li>기획안 작성 및 제출</li>
+                    <li>어신팀 검토 및 확정</li>
+                    <li>청약 상품 등록</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center relative z-10 group">
+                <div class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ring-8 ring-white group-hover:bg-blue-600 transition-colors">2</div>
+                <h3 class="text-lg font-bold mb-2">신청 및 결제</h3>
+                <ul class="text-sm text-gray-600 text-left list-disc list-inside space-y-1">
+                    <li>어신 앱 ‘청약’ 모집</li>
+                    <li>당첨자 논의 및 선정</li>
+                    <li>낙첨자 자동 전액 환불</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center relative z-10 group">
+                <div class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ring-8 ring-white group-hover:bg-blue-600 transition-colors">3</div>
+                <h3 class="text-lg font-bold mb-2">정보 수집</h3>
+                <ul class="text-sm text-gray-600 text-left list-disc list-inside space-y-1">
+                    <li>당첨자 구글폼 발송</li>
+                    <li>세부 일정 안내</li>
+                    <li>촬영 동의 및 연락망 수집</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center relative z-10 group">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ring-8 ring-white">4</div>
+                <h3 class="text-lg font-bold mb-2 text-blue-600">행사 진행</h3>
+                <ul class="text-sm text-gray-600 text-left list-disc list-inside space-y-1">
+                    <li>크리에이터 중심 진행</li>
+                    <li>사후 정산 (어신 담당)</li>
+                    <li>현장 소통 및 촬영</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-800 text-white py-16 mb-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-10 text-center">6. 어신이 지원하는 영역</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-start p-4 bg-slate-700/50 rounded-lg">
+                    <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                    <span>청약 기반 신청·결제·환불 시스템 운영</span>
+                </div>
+                <div class="flex items-start p-4 bg-slate-700/50 rounded-lg">
+                    <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                    <span>당첨자 대상 구글폼 발송 및 정보 취합</span>
+                </div>
+                <div class="flex items-start p-4 bg-slate-700/50 rounded-lg">
+                    <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                    <span>선사 비용 사후 정산</span>
+                </div>
+                <div class="flex items-start p-4 bg-slate-700/50 rounded-lg">
+                    <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                    <span>홍보 소재 제작 및 어신 앱/SNS 노출</span>
+                </div>
+                <div class="flex items-start p-4 bg-slate-700/50 rounded-lg col-span-1 md:col-span-2">
+                    <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                    <span>기본적인 참가자 문의 대응 (결제 및 프로그램 안내)</span>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <span class="inline-block px-4 py-2 rounded-full bg-blue-600 text-sm font-bold shadow-lg">
+                    "크리에이터님은 프로그램 운영과 참가자 소통에만 집중하시면 됩니다."
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 mb-20">
+        <div class="border-2 border-dashed border-gray-300 rounded-2xl p-8 bg-white">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 text-center">7. <span class="text-blue-600">파일럿 프로그램</span> 운영 방식</h2>
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <p class="text-gray-700">파일럿 단계에서는 <strong>운영 자율성을 최우선</strong>으로 제공합니다.</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <p class="text-gray-700">선사 선택에 대한 제한이 없습니다.</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <p class="text-gray-700">승선비 등 현장 관련 협의는 <strong>크리에이터가 주도</strong>합니다.</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <p class="text-gray-700">프로그램 구성 및 가격은 <strong>전적으로 크리에이터가 기획</strong>합니다.</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-2 h-2 bg-gray-400 rounded-full mr-3"></div>
+                    <p class="text-gray-500 text-sm">운영 결과와 피드백을 기반으로 구조를 점진적으로 개선할 예정입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 mb-20">
+        <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">8. 기대 효과</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl card-shadow">
+                <div class="flex items-center mb-6 pb-2 border-b">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-3">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900">크리에이터</h3>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-arrow-right text-blue-500 mr-3"></i>참가비 기반의 부수입 구조 형성
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-arrow-right text-blue-500 mr-3"></i>팬덤 강화
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-arrow-right text-blue-500 mr-3"></i>새로운 콘텐츠 확보
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-arrow-right text-blue-500 mr-3"></i>체험 기반 커뮤니티 확장
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-2xl">
+                <div class="flex items-center mb-6 pb-2 border-b border-gray-300">
+                    <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 mr-3">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">어신 (us-in)</h3>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-gray-400 mr-3"></i>신규 사용자 유입
+                    </li>
+                    <li class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-gray-400 mr-3"></i>서비스 체류 시간 증대
+                    </li>
+                    <li class="flex items-center text-gray-600">
+                        <i class="fas fa-check text-gray-400 mr-3"></i>장기적으로 크리에이터 기반 체험 카테고리 구축
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-12 text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">9. Next Step — 함께 시작해요</h2>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+                프로그램에 관심이 있으시다면, 가장 먼저 의향 조사를 위해 아래 버튼을 눌러주세요.<br>
+                이후 어신이 프로그램 기획 시트를 전달드리며 여러분의 첫 동출 프로그램을 설계해서 전달해주세요.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
+                <a href="https://forms.gle/oDPgxdPqgqv5KX5DA" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center justify-center">
+                    <i class="fas fa-pen-to-square mr-2"></i>참여 의향서 제출하기
+                </a>
+                <a href="mailto:us-in@sgma.io" class="bg-white hover:bg-gray-50 text-blue-600 border border-blue-600 font-bold py-4 px-10 rounded-full shadow-lg transition-all flex items-center justify-center">
+                    <i class="far fa-envelope mr-2"></i>문의하기 (이메일)
+                </a>
+            </div>
+            
+            <p class="text-gray-400 text-sm">The Companions Project © SGMA CORP. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
